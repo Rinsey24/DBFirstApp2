@@ -8,6 +8,6 @@ public class Student
     public DateTime DateOfBirth { get; set; }
     public string Email { get; set; } = string.Empty;
 
-    public int Age => DateTime.Now.Year - DateOfBirth.Year - 
-                      (DateTime.Now.DayOfYear < DateOfBirth.DayOfYear ? 1 : 0);
+    public int Age => DateTime.Now.Year - DateOfBirth.Year -  // Разница лет
+                      (DateTime.Now.DayOfYear < DateOfBirth.DayOfYear ? 1 : 0); // ^ Вычитает 1 если день рождения еще не наступил в этом году
 }

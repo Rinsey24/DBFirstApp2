@@ -18,7 +18,6 @@ public class StudentContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // Настройка таблицы согласно требованиям
         modelBuilder.Entity<Student>(entity =>
         {
             entity.ToTable("Students");
@@ -45,8 +44,7 @@ public class StudentContext : DbContext
             entity.Property(e => e.Email)
                 .HasColumnName("email")
                 .HasMaxLength(100);
-
-            // Уникальный индекс для email
+            
             entity.HasIndex(e => e.Email)
                 .IsUnique();
         });
